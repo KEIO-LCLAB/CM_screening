@@ -99,7 +99,7 @@ if __name__ == '__main__':
     expected, predicted, decision = [], [], []
     for train, test in loo.split(X):  ## select train and test data
         svc.fit(X[train], y[train])
-        joblib.dump(svc, './svm_data_minmax.pkl', compress=True)  # save learning data
+        joblib.dump(svc, './svm_data.pkl', compress=True)  # save learning data
         expected.extend(y[test])  ## add truth label
         predicted.extend(svc.predict(X[test]))  ## add predicted label
         decision.extend(svc.decision_function(X[test]))  ## calculate probability
