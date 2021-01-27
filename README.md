@@ -9,11 +9,11 @@ using non-contact sensor&quot;.
 - Python
 
 ## Quick Start Overview
-Install all files from the repository or copy the repository.
+Install or copy &quot;CM_screening-main&quot; from the page top.
 
 - Unity Application
 1. Prepare a computer with a macOS (Apple Inc., Cupertino, CA, USA) and Leap Motion.
-2. Uncompress the compressed file &quot;CM_screening-main&quot;.
+2. Uncompress the compressed file &quot;HANZM_exe&quot;.
 3. Open the folder &quot;HANZM_exe&quot; and start HANZM ver2.1.
 4. Put the 8-digit ID.
 5. Perform the examination by gripping and releasing fingers 20 times on the Leap Motion according to the Measurements in the paper.
