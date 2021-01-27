@@ -22,5 +22,6 @@ using non-contact sensor&quot;.
 7. Add the examination data from Unity into /10s-test-data/Patient/******** or /10s-test-data/Health/********.  
    ******** means 8-digit ID.  
    If the data is patient's one, add into the former. If else, add into the latter.
+   ![Alt text](directory_path_image.PNG)
 8. Examine data_check.py. This is the prepare for classification.
 9. Examine fft_classification.py. After it, the classification result is shown.
