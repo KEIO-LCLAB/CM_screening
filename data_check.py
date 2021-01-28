@@ -8,7 +8,6 @@ import numpy as np
 
 DATA_PATH = "./10s-test-data" ## data path
 TESTDATA_PATH = "./classification-data" ## test data path
-SAVEDATA_PATH = "./TestData" ## test data (after extracting) path
 handlist = ["L1", "L2", "R1", "R2"]
 finishflag = [0] * 4
 
@@ -39,6 +38,7 @@ def export_index(index, df0):
 
 def identify_data_check(csv):
     dir_list = glob.glob(TESTDATA_PATH + "/*")
+    if not (os.path.exists("./TestData")): os.makedirs("./TestData")
     global finishflag
     for directory in dir_list:
         file_list = glob.glob(directory + "/*.csv")  ## get & select data every user
@@ -50,7 +50,7 @@ def identify_data_check(csv):
                 if type(data_frame) != str:  ## if data length is too short, the data cannot use classification
                     df = data_frame[:, 2:22]  ## get only 35 parameters' time series data
                     df = np.append(df, data_frame[:, 37:52], axis=1)
-                    csv.write(SAVEDATA_PATH + "/" + os.path.basename(file)[:10], df)
+                    csv.write("./TestData/" + os.path.basename(file)[:10], df)
                     print("\x1b[42m" + "SAVE" + "\x1b[0m " + file)
                     finishflag[handlist.index(file_hand)] = 1
                 else:

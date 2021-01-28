@@ -41,7 +41,7 @@ def plot_roc_curve(fpr, tpr):
     plt.ylabel('True Positive Rate')
     plt.title('Receiver operating characteristic (LOO)')
     plt.legend(loc="lower right")
-    plt.savefig('./analysis data/LOO-'+ parameter +'png')  ##画像として保存
+    plt.savefig('./analysis_data/LOO-'+ parameter +'.png')  ##画像として保存
     plt.show()
 
 
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     print(np.shape(X))
     sc = StandardScaler()
     X = sc.fit_transform(np.abs(np.array(X)).T).T ##StandardScaler使用時
-    joblib.dump(sc, './sc_parameter.pkl', compress=True)
+    joblib.dump(sc, "./sc_parameter_" + parameter + ".pkl", compress=True)
     X = np.array(X)
     y = np.array(y)
 
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     expected, predicted, decision = [], [], []
     for train, test in loo.split(X):  ## select train and test data
         svc.fit(X[train], y[train])
-        joblib.dump(svc, './svm_data.pkl', compress=True)  # save learning data
+        joblib.dump(svc, "./svm_data_" + parameter + ".pkl", compress=True)  # save learning data
         expected.extend(y[test])  ## add truth label
         predicted.extend(svc.predict(X[test]))  ## add predicted label
         decision.extend(svc.decision_function(X[test]))  ## calculate probability
