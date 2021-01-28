@@ -29,7 +29,7 @@ We prepared a svm learning model &quot;svm_data.pkl&quot;, which is using a comb
 #### Python Software
 7. Add the examination data from Unity into &quot;classification-data/\*\*\*\*\*\*\*\*&quot;(8-digit ID).  
    Please make a directory every user, which is named as &quot;\*\*\*\*\*\*\*\*&quot;(8-digit ID).
-8. Execute cm_classification.py. After it, the classification model is made, and the result of the Leave-one-out evaluation is shown.
+8. Execute cm_classification.py. After it, the classification result is shown.
 
 ## Parameter Set
 Our data from Leap Motion has 35 features.  
@@ -48,4 +48,4 @@ Please get some people's data by [a similar flow](#unity-application-get-at-leas
    Please make a directory every user, which is named as &quot;\*\*\*\*\*\*\*\*&quot;(8-digit ID).  
    If the data is CM patient's one, add into the former. If else, add into the latter.  
    ![Alt text](directory_path_image.PNG)
-8. Execute make_model.py. After it, the classification result is shown.
+8. Execute make_model.py. After it, the classification model is made, and the result of the Leave-one-out evaluation is shown.
