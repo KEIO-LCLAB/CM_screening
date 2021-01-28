@@ -9,9 +9,9 @@ This page contains information about the screening software and program in the p
 - [How to make classification model](#how-to-make-classification-model)
 
 ## Requirement
-- Leap Motion (Leap Motion, San Francisco, CA, USA)
+- Leap Motion (Leap Motion, San Francisco, CA, USA) ver2.1
 - Unity
-- Python3.6
+- Python 3.6
 
 ## Quick Start Overview
 You can execute our screening system easily if you can make new data.  
