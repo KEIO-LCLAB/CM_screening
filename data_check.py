@@ -15,7 +15,8 @@ finishflag = [0] * 4
 def export_index(index, df0):
     begin_index, finish_index, before_row = -1, 0, 0
     for i in range(index, len(df0)):
-        csv_row = np.array(df0)[i][304]
+        csv_row = np.array(df0)[i][-1]
+        print(str(csv_row))
         if csv_row == 1 and i < len(df0) - 1:
             if begin_index == -1:
                 begin_index = i
@@ -30,7 +31,10 @@ def export_index(index, df0):
             break
         elif csv_row == 0 and finish_index == 0 and i == len(df0) - 1:
             print("not find")
-            return "lessdata"
+            return "less data size"
+        elif str(csv_row) != "0" and str(csv_row) != "1":
+            print("data error")
+            return "data error"
     if finish_index - begin_index >= 256 and begin_index != -1:
             return np.array(df0)[begin_index:finish_index]
     return export_index(finish_index, df0)
