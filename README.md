@@ -26,3 +26,9 @@ Install or copy &quot;CM_screening-main&quot; from the page top.
    ![Alt text](directory_path_image.PNG)
 7. Examine data_check.py. This is the prepare for classification.
 8. Examine fft_classification.py. After it, the classification result is shown.
+
+## Feature Set
+Our data from Leap Motion has 35 features.  
+- speed     : 0~4
+- position  : 5~19
+- direction : 20~34
