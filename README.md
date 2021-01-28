@@ -2,10 +2,16 @@ Cervical Myelopathy Screening
 ====
 This page contains information about the screening software and program in the paper &quot;Cervical myelopathy screening with machine learning algorithm focusing on finger motion using non-contact sensor&quot;.
 
+## Contents
+- [Requirement](#requirement)
+- [Quick Start OVerview](#quick-start-overview)
+- [Parameter Set](#parameter-set)
+- [How to make classification model](#how-to-make-classification-model)
+
 ## Requirement
 - Leap Motion (Leap Motion, San Francisco, CA, USA)
 - Unity
-- Python
+- Python3.6
 
 ## Quick Start Overview
 You can execute our screening system easily if you can get new data.  
