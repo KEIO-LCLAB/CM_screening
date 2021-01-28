@@ -61,8 +61,8 @@ def identify_data_check(csv):
                 break
 
 
-if __name__ == '__main__':
-    csv = CsvFile()
+def make_classification_data_check(csv):
+    global finishflag
     data = os.listdir(DATA_PATH)
     files_dir = [f for f in data if os.path.isdir(os.path.join(DATA_PATH, f))]
     for item in files_dir:

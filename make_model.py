@@ -14,6 +14,7 @@ from sklearn import svm, model_selection
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.externals import joblib
 import matplotlib.pyplot as plt
+import data_check
 
 # parameter setting
 N = 64 # set data size for FFT (Recommend: 2 to the power of X)
@@ -59,6 +60,7 @@ def write_result(score, tp, fp, tn, fn, roc_auc):
 if __name__ == '__main__':
     csv = CsvFile()
     X, x, y, file_list, human_label, human_div, human_all = [], [], [], [], [], [], []
+    data_check.make_classification_data_check(csv)
     file_list.append(glob.glob(SAVE_PATH_True + "/*.csv")) ## add health data's path to list
     file_list.append(glob.glob(SAVE_PATH_False + "/*.csv")) ## add patient data's path to list
 
