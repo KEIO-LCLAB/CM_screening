@@ -31,6 +31,7 @@ From, To = 5, 34 ## select feature, if you want to use only partial feature
 
 
 def plot_roc_curve(fpr, tpr):
+    if not (os.path.exists("./analysis_data")): os.makedirs("./analysis_data")
     plt.plot(fpr, tpr, label='ROC curve (area = %0.2f)' % roc_auc)
     plt.plot([0, 1], [0, 1], 'k--')
     plt.xlim([0.0, 1.0])
@@ -44,6 +45,7 @@ def plot_roc_curve(fpr, tpr):
 
 
 def write_result(score, tp, fp, tn, fn, roc_auc):
+    if not (os.path.exists("./accudata_txt")): os.makedirs("./accudata_txt")
     f = open('./accudata_txt/LOO-' + parameter + '.txt', 'w')  ## select file path
     data_list = [str(float(Decimal(score * 100).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP))), ", ",
                  str(float(Decimal(tp / (fn + tp) * 100).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP))),
