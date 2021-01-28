@@ -14,7 +14,7 @@ This page contains information about the screening software and program in the p
 - Python3.6
 
 ## Quick Start Overview
-You can execute our screening system easily if you can get new data.  
+You can execute our screening system easily if you can make new data.  
 Install or copy &quot;CM_screening-main&quot; from the page top.  
 We prepared a svm learning model &quot;svm_data.pkl&quot;, which is using a combination of parameters (the position and direction).
 
