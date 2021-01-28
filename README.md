@@ -48,5 +48,4 @@ Please get some people's data by [a similar flow](#unity-application-get-at-leas
    Please make a directory every user, which is named as &quot;\*\*\*\*\*\*\*\*&quot;(8-digit ID).  
    If the data is CM patient's one, add into the former. If else, add into the latter.  
    ![Alt text](directory_path_image.PNG)
-8. Execute data_check.py. This is the prepare for classification.
-9. Execute make_model.py. After it, the classification result is shown.
+8. Execute make_model.py. After it, the classification result is shown.
