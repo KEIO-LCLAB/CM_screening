@@ -13,7 +13,7 @@ You can execute our screening system easily if you can get new data.
 Install or copy &quot;CM_screening-main&quot; from the page top.
 We prepared a svm learning model &quot;svm_data.pkl&quot;, which is using a combination of parameters (the position and direction).
 
-#### Unity Application
+#### Unity Application (Get at least one person's data)
 1. Prepare a computer with a macOS (Apple Inc., Cupertino, CA, USA) and Leap Motion.
 2. Uncompress the compressed file &quot;HANZM_exe&quot;.
 3. Open the folder &quot;HANZM_exe&quot; and start HANZM ver2.1.
@@ -36,7 +36,7 @@ Our data from Leap Motion has 35 features.
 You can make your svm learning model for classification.
 
 - Unity Application
-Please get some people's data by [a similar flow](#Unity Application) .
+Please get some people's data by [a similar flow](#UnityApplication(Getatleastoneperson'sdata)) .
 
 6. Add the examination data from Unity into /10s-test-data/Patient/******** or /10s-test-data/Health/********.  
    ******** means 8-digit ID.  
