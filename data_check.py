@@ -6,7 +6,9 @@ import os, glob
 import numpy as np
 
 
-DATA_PATH = "./10s-test-data" ## data's path
+DATA_PATH = "./10s-test-data" ## data path
+TESTDATA_PATH = "./classification-data" ## test data path
+SAVEDATA_PATH = "./TestData" ## test data (after extracting) path
 handlist = ["L1", "L2", "R1", "R2"]
 finishflag = [0] * 4
 
@@ -35,8 +37,32 @@ def export_index(index, df0):
     return export_index(finish_index, df0)
 
 
+def identify_data_check(csv):
+    dir_list = glob.glob(TESTDATA_PATH + "/*")
+    global finishflag
+    for directory in dir_list:
+        file_list = glob.glob(directory + "/*.csv")  ## get & select data every user
+        for file in file_list:
+            file_hand = os.path.basename(file)[8:10]
+            if file_hand in handlist and finishflag[handlist.index(file_hand)] == 0:
+                print(file)
+                data_frame = export_index(0, csv.read(file))  ## check data length
+                if type(data_frame) != str:  ## if data length is too short, the data cannot use classification
+                    df = data_frame[:, 2:22]  ## get only 35 parameters' time series data
+                    df = np.append(df, data_frame[:, 37:52], axis=1)
+                    csv.write(SAVEDATA_PATH + "/" + os.path.basename(file)[:10], df)
+                    print("\x1b[42m" + "SAVE" + "\x1b[0m " + file)
+                    finishflag[handlist.index(file_hand)] = 1
+                else:
+                    print("\x1b[41m" + "Miss" + "\x1b[0m " + file)
+                    continue
+            if 0 not in finishflag:
+                finishflag = [0] * 4
+                break
+
+
 if __name__ == '__main__':
-    cv = CsvFile()
+    csv = CsvFile()
     data = os.listdir(DATA_PATH)
     files_dir = [f for f in data if os.path.isdir(os.path.join(DATA_PATH, f))]
     for item in files_dir:
@@ -48,10 +74,11 @@ if __name__ == '__main__':
                 file_hand = os.path.basename(file)[8:10]
                 if file_hand in handlist and finishflag[handlist.index(file_hand)] == 0:
                     print(file)
-                    data_frame = export_index(0, cv.read(file)) ## check data length
+                    data_frame = export_index(0, csv.read(file)) ## check data length
                     if type(data_frame) != str: ## if data length is too short, the data cannot use classification
-                        df = data_frame[:, 2:52] ## get only 50 parameters' time series data
-                        cv.write("./" + item + "/" + os.path.basename(file)[:10], df)
+                        df = data_frame[:, 2:22] ## get only 35 parameters' time series data
+                        df = np.append(df, data_frame[:, 37:52], axis=1)
+                        csv.write("./" + item + "/" + os.path.basename(file)[:10], df)
                         print("\x1b[42m" + "SAVE" + "\x1b[0m " + file)
                         finishflag[handlist.index(file_hand)] = 1
                     else:
