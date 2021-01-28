@@ -36,7 +36,7 @@ Our data from Leap Motion has 35 features.
 You can make your svm learning model for classification.
 
 - Unity Application
-Please get some people's data by [a similar flow](#UnityApplication(Getatleastoneperson'sdata)) .
+Please get some people's data by [a similar flow](#unity-application-get-at-least-one-persons-data) .
 
 6. Add the examination data from Unity into /10s-test-data/Patient/******** or /10s-test-data/Health/********.  
    ******** means 8-digit ID.  
