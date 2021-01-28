@@ -40,7 +40,7 @@ Our data from Leap Motion has 35 features.
 - position  : 5~19
 - direction : 20~34
 
-## How to make classification model
+## (Optional) How to make classification model
 You can make your svm learning model for classification.
 
 #### Unity Application
