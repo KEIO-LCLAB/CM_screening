@@ -1,16 +1,15 @@
 Cervical Myelopathy Screening
 ====
-This page contains information about the screening software and program in the paper &quot;Cervical myelopathy screening with machine learning algorithm focusing on finger motion
-using non-contact sensor&quot;.
+This page contains information about the screening software and program in the paper &quot;Cervical myelopathy screening with machine learning algorithm focusing on finger motion using non-contact sensor&quot;.
 
 ## Requirement
-- Leap Motion(Leap Motion, San Francisco, CA, USA)
+- Leap Motion (Leap Motion, San Francisco, CA, USA)
 - Unity
 - Python
 
 ## Quick Start Overview
-You can execute our screening system easily if you can get new data.
-Install or copy &quot;CM_screening-main&quot; from the page top.
+You can execute our screening system easily if you can get new data.  
+Install or copy &quot;CM_screening-main&quot; from the page top.  
 We prepared a svm learning model &quot;svm_data.pkl&quot;, which is using a combination of parameters (the position and direction).
 
 #### Unity Application (Get at least one person's data)
@@ -22,7 +21,7 @@ We prepared a svm learning model &quot;svm_data.pkl&quot;, which is using a comb
 6. Get the examination data at &quot;HANZM_exe/HANZM ver2.1/Contents/Log&quot;.
 
 #### Python Software
-7. Add the examination data from Unity into &quot;classification-data/\*\*\*\*\*\*\*\*&quot;(8-digit ID).
+7. Add the examination data from Unity into &quot;classification-data/\*\*\*\*\*\*\*\*&quot;(8-digit ID).  
    Please make a directory every user, which is named as &quot;\*\*\*\*\*\*\*\*&quot;(8-digit ID).
 8. Execute cm_classification.py. After it, the classification result is shown.
 
@@ -40,8 +39,8 @@ Please get some people's data by [a similar flow](#unity-application-get-at-leas
 
 #### Python Software
 7. Add the examination data from Unity into &quot;10s-test-data/Patient/\*\*\*\*\*\*\*\*&quot; or &quot;10s-test-data/Health/\*\*\*\*\*\*\*\*&quot;(8-digit ID).  
-   Please make a directory every user, which is named as &quot;\*\*\*\*\*\*\*\*&quot;(8-digit ID). 
-   If the data is CM patient's one, add into the former. If else, add into the latter.
+   Please make a directory every user, which is named as &quot;\*\*\*\*\*\*\*\*&quot;(8-digit ID).  
+   If the data is CM patient's one, add into the former. If else, add into the latter.  
    ![Alt text](directory_path_image.PNG)
 8. Execute data_check.py. This is the prepare for classification.
 9. Execute make_model.py. After it, the classification result is shown.
